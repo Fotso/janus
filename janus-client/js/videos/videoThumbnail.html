@@ -1,0 +1,90 @@
+<div class="container" ng-controller="addVideoController">
+	<div ui-view="grid" ng-if="isEdit && entry.values.files.length > 0">
+		<div class="show-value cil-sm-10 col-md-9 col-lg-10"><!-- col-md-8 col-lg-7 --><br/><br/>
+			<table class="grid table table-condensed table-hover table-striped">
+				<thead>
+					<tr>
+						<th><input type="checkbox" ng-model="master" ng-change="isSelectAll(entry.values.files)"/></th>
+						<th>Thumbnail</th>
+						<th>Original name</th>
+						<th><th>
+						<th>
+						    <div class="btn-group" uib-dropdown is-open="status.isopen" ng-if="selectedLabelList.length">
+					      		<button id="single-button" type="button" class="btn btn-default dropdown-toggle ng-binding ng-scope" uib-dropdown-toggle ng-disabled="disabled">
+						        {{selectedLabelList.length}} Selected <span class="caret"></span>
+						      	</button>
+						      	<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+						        	<li role="menuitem"><a ng-click="deletePhoto(entry.values._id)">Delete</a></li>
+						        	<!--<li role="menuitem"><a ui-sref="removeFiles({ id: entry.values._id })">Delete</a></li>-->
+						      	</ul>
+						    </div>
+						</th>
+					<tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="file in entry.values.files" class="ng-scope">
+						<td ><input type="checkbox" ng-model="file.Selected" ng-change="isLabelChecked(entry.values.files)"/>
+                		</td>
+                		<td>
+                			<div class="ng-isolate-scope"><div thumbnail="http://localhost:8888/api/file/{{file.filename}}" image="http://localhost:8888/api/file/{{file.filename}}" class="ng-scope ng-isolate-scope"><img ng-src="http://localhost:8888/api/file/{{file.filename}}" class="mini_thumbnail"></div></div>	
+                		</td>
+                		<td><td>
+                		<td>		
+                			<button id="singlebutton" type="button" ui-sref="detailPhoto({ filename: file.filename })" name="singlebutton" class="btn btn-default"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>&nbsp;Details</button> 
+                		</td>
+					</tr>
+				</tbody>
+			</table><br/><br/>
+		</div>
+	</div>
+</div>
+<div class="col-md-4 center-block">
+    <button id="singlebutton" name="singlebutton" type="button" class="btn btn-primary center-block hidden">
+        Next Step!
+    </button>
+</div>
+<div class="col-md-4 text-center"> 
+<button id="singlebutton" type="button" name="singlebutton" class="btn btn-default" ng-click="addPhotos = !addPhotos">
+	<i class="fa fa-plus fa-1" aria-hidden="true"></i>&nbsp;Add videos</button> 
+</div>
+<br/><br/><br/><br/>
+<div class="check-element animate-show" ng-show="addPhotos" >
+	<form  name="form" ng-controller="addVideoController" >
+		<div class="col-md-4 center-block">
+		    <button id="singlebutton" name="singlebutton" type="button" class="btn btn-primary center-block hidden">
+		        Next Step!
+		    </button>
+		</div>
+		<div class="col-md-4 text-center"> 
+			<a id="singlebutton" href='javascript:;' name="singlebutton" class="btn btn-success">
+				<i class="fa fa-picture-o fa-1" aria-hidden="true"></i>&nbsp;Choose File...
+	            <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' onchange="angular.element(this).scope().filesChanged(this)"multiple ngf-select ng-model="files" ngf-multiple="true" file-input="files" name="files"/>
+			</a>  
+		</div><strong style="color:green">(10 files maximum in one time)</strong>
+		<div style="margin-top: 30px;"></div>
+		<div class="container">
+        	<div style="border-radius: 4px; float: left; border: 1px solid #bbb;  padding: 10px; margin-right: 10px; margin-bottom: 10px" ng-repeat="file in files">
+	            <div class="thumbnail">
+	                <div class="caption">
+	                    <h3>Album video {{$index +1}}</h3>
+	                    <img ngf-src="file" class="thumb" style="width:255px;">
+	                    <div style="overflow: hidden; white-space: nowrap"><strong>Name:</strong> {{ file.name }}</div>
+	                    <div><strong>Size:</strong> {{ file.size/1024/1024|number:2 }} Mb</div><br/>
+	                    <p><a class="btn btn-primary"  style="visibility: hidden;" role="button"{{>Button</a> <a class="btn btn-default btn-danger" ng-click="remove(file)" role="button">Remove</a></p>
+	                </div>
+	            </div>
+	        </div>
+		</div><br/>
+	    <div class="col-md-4 center-block">
+		    <button id="singlebutton" name="singlebutton" type="button" class="btn btn-primary center-block hidden">
+		        Next Step!
+		    </button>
+		</div>
+		<div class="col-md-4 text-center"> 
+		<button id="singlebutton" type="button" ng-click="upload_video()" name="singlebutton" class="btn btn-success" ng-click="addVideos = !addVideos">
+			<i class="fa fa-plus fa-1" aria-hidden="true"></i>&nbsp;Send videos</button> 
+		</div>
+	</form>
+</div>
+<script src="ng-file-upload-shim.min.js"></script>
+<script src="ng-file-upload.min.js"></script>

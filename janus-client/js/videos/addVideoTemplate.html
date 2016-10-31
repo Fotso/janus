@@ -1,0 +1,46 @@
+<form  name="form" ng-controller="addVideoController">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page header">
+                <h1>Edit album video {{videoService.name}}
+                    <ma-view-actions><ma-back-button></ma-back-button></ma-view-actions>
+                </h1>
+                <hr/>
+            </div>
+        </div>
+    </div>
+    <div id="row-date_event" class="form-field form-group">
+        <label for="date_event" class="col-sm-2 control-label">
+        </label>
+        <div class="col-sm-10 col-md-8 col-lg-7">
+            <a class='btn btn-primary' href='javascript:;'>
+                Choose File...
+                <input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' 
+                onchange="angular.element(this).scope().filesChanged(this)"               
+                multiple ngf-select ng-model="files" ngf-multiple="true" file-input="files" name="files"/>
+            </a>  &nbsp;(10 files max)
+        </div>
+    </div><br/><br/>
+    <div class="container"> 
+        <div style="border-radius: 4px; float: left; border: 1px solid #bbb;  padding: 10px; margin-right: 10px; margin-bottom: 10px" ng-repeat="file in files">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Album video {{$index +1}}</h3>
+                    <img ngf-src="file" class="thumb" style="width:255px;">
+                    <div style="overflow: hidden; white-space: nowrap"><strong>Name:</strong> {{ file.name }}</div>
+                    <div><strong>Size:</strong> {{ file.size/1024/1024|number:2 }} Mb</div><br/>
+                    <p><a class="btn btn-primary"  style="visibility: hidden;" role="button"{{>Button</a> <a class="btn btn-default btn-danger" ng-click="remove(file)" role="button">Remove</a></p>
+                </div>
+            </div>
+        </div>
+    </div><br/>       
+    <div class="form-field form-group">
+        <label class="col-sm-2 control-label">     
+        </label>
+        <div class="col-sm-10 col-md-8 col-lg-7">
+            <button type="submit" class="btn btn-primary" ng-click="upload_video()"><span class="glyphicon glyphicon-ok"></span>&nbsp;<span class="hidden-xs ng-scope" translate="SAVE_CHANGES">Save changes</span></button>
+        </div>
+    </div>
+</form>
+<script src="ng-file-upload-shim.min.js"></script>
+<script src="ng-file-upload.min.js"></script>

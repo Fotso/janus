@@ -1,0 +1,59 @@
+@import "../build/ng-admin.min.css";
+
+.poster_mini_thumbnail {
+    max-width:25px;
+    max-height:25px;
+}
+
+.navbar-defaut{
+    background-color: rgba(0,0,0,.5)!important;
+}
+.navbar-right > li > a {
+    padding-top: 15px;
+}
+
+table.items > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.grid .ng-admin-type-amount, .grid .ng-admin-column-total_spent {
+    text-align: right;
+    padding-right: 1em;
+}
+
+// Basket
+.form-control.delivery_fees {
+    padding-right: 0;
+}
+
+.transparent {
+    color: transparent;
+}
+
+div.album{
+	float: left; 
+	width:300px; 
+	margin-right: 10px; 
+	min-height: 200px;
+}
+div.album div.description{
+	padding: 5px;
+}
+input[type=text]{
+	padding:3px;
+	border-radius: 4px;
+	border: 1px solid #bbb;
+}
+
+textarea{
+	padding:3px;
+	border-radius: 4px;
+	border: 1px solid #bbb;
+}
+div.album div.panel-heading a{
+	color:white;
+}
+.mini_thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+}

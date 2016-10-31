@@ -1,0 +1,27 @@
+{
+	"name": "janus-server",
+	"version": "1.0.0",
+	"description": "server for the application janus admin",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"express": "^4.11.1",
+		"body-parser": "^1.10.2",
+		"morgan": "^1.5.0",
+		"passport": "^0.3.0",
+		"jwt-simple": "^0.3.1",
+		"passport-jwt": "^1.2.1",
+    	"multer": "^1.2.0",
+	    "mongojs": "^0.18.1",
+    	"mongoose": "^4.2.4",
+    	"path": "^0.12.7",
+    	"bcrypt": "^0.8.7"
+	},
+	"devDependencies": {
+
+	},
+	"author": "theo",
+	"license": "ISC"
+}
