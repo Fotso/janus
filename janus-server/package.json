@@ -14,7 +14,7 @@
 		"jwt-simple": "^0.3.1",
 		"passport-jwt": "^1.2.1",
     	"multer": "^1.2.0",
-	    "mongojs": "^0.18.1",
+	    "mongojs": "*", //https://github.com/michaelcheng429/meanstacktutorial/issues/5
     	"mongoose": "^4.2.4",
     	"path": "^0.12.7",
     	"bcrypt": "^0.8.7"
