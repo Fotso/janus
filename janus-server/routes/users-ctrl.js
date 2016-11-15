@@ -10,7 +10,7 @@ var passport = require('passport');
 require('./../config/passport')(passport);
 var config = require('./../config/database.js'); // get our config file
 var User = require('./../models/user'); // get our mongoose model
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 // configuration 
 var apiRoutes = express.Router();
 

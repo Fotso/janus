@@ -1,6 +1,7 @@
 module.exports = {
 	'secret': 'devdacticIsAwesome',
-	'database': 'mongodb://localhost:27017/janus',
+	'database': 'mongodb://localhost:27017/janus',,
+	'db': 'mongodb://mongo:27017/janus',
 	'database_mlab': 'mongodb://theophraste:theophraste@ds057176.mlab.com:57176/janus',
 	'database_gc': 'mongodb:///opt/bitnami/mongodb/tmp/mongodb-27017.sock/janus',
 	authentication: function(req, res) {
