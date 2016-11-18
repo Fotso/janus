@@ -1,0 +1,7 @@
+{"_id":{"$oid":"57a2187e70cba8827ea47b6a"},"event_type":"theater"}
+{"_id":{"$oid":"57a2187e70cba8827ea47b6b"},"event_type":"night club"}
+{"_id":{"$oid":"57a2187e70cba8827ea47b6c"},"event_type":"opera"}
+{"_id":{"$oid":"57a2219a7536c23044a17ba5"},"event_type":"concert","updated_at":{"$date":"2016-08-03T16:53:46.017Z"},"created_at":{"$date":"2016-08-03T16:53:46.017Z"},"__v":0}
+{"_id":{"$oid":"57c9d772d2ef6e483171e3e0"},"event_type":"exposition","updated_at":{"$date":"2016-09-02T19:48:02.703Z"},"created_at":{"$date":"2016-09-02T19:48:02.703Z"},"__v":0}
+{"_id":{"$oid":"57ca5e33c393f7d013c85ec7"},"event_type":"museum","updated_at":{"$date":"2016-09-03T05:22:59.963Z"},"created_at":{"$date":"2016-09-03T05:22:59.962Z"},"__v":0}
+{"_id":{"$oid":"57e3db57b3698d1ee8e0d040"},"event_type":"music hall","updated_at":{"$date":"2016-09-22T13:23:35.031Z"},"created_at":{"$date":"2016-09-22T13:23:35.031Z"},"__v":0}

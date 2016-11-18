@@ -1,0 +1,1 @@
+{"_id":{"$oid":"57fb734edee4a429a04c845d"},"name":"album videos test","title":"test","description":"this is album videos test","date":"2016-10-09T22:00:00.000Z","updated_at":{"$date":"2016-10-10T12:14:11.121Z"},"created_at":{"$date":"2016-10-10T10:54:06.848Z"},"files":[],"__v":0}
